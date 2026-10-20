@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forbidden Magic</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="assets/images/chest-open.svg">
+  <link rel="preload" as="image" href="assets/images/cat-happy.svg">
+</head>
+<body>
+  <main class="stage">
+
+    <!-- 1. Locked chest -->
+    <section class="scene scene-chest active" id="scene-chest">
+      <p class="caption">What could this chest be hiding?</p>
+      <div class="chest-wrap">
+        <img class="pop-cat" id="pop-cat" src="assets/images/cat.svg" alt="" hidden>
+        <span class="ground-shadow chest-shadow" aria-hidden="true"></span>
+        <span class="ground-shadow pop-cat-shadow" id="pop-cat-shadow" aria-hidden="true" hidden></span>
+        <span class="chest-front" aria-hidden="true"></span>
+        <button class="chest" id="chest" aria-label="Open the locked chest">
+          <span class="chest-sprite rattle" id="chest-sprite"></span>
+        </button>
+        <svg id="key" class="key" viewBox="0 0 12 20" aria-hidden="true" hidden>
+          <rect x="3" y="0" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="0" width="1" height="1" fill="#2a1612"/>
+          <rect x="5" y="0" width="1" height="1" fill="#2a1612"/>
+          <rect x="6" y="0" width="1" height="1" fill="#2a1612"/>
+          <rect x="7" y="0" width="1" height="1" fill="#2a1612"/>
+          <rect x="8" y="0" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="1" width="1" height="1" fill="#2a1612"/>
+          <rect x="2" y="1" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="1" width="1" height="1" fill="#ffe98a"/>
+          <rect x="4" y="1" width="1" height="1" fill="#ffffff"/>
+          <rect x="5" y="1" width="1" height="1" fill="#ffe98a"/>
+          <rect x="6" y="1" width="1" height="1" fill="#ffe98a"/>
+          <rect x="7" y="1" width="1" height="1" fill="#f5b82e"/>
+          <rect x="8" y="1" width="1" height="1" fill="#f5b82e"/>
+          <rect x="9" y="1" width="1" height="1" fill="#2a1612"/>
+          <rect x="10" y="1" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="2" width="1" height="1" fill="#2a1612"/>
+          <rect x="2" y="2" width="1" height="1" fill="#ffe98a"/>
+          <rect x="3" y="2" width="1" height="1" fill="#fff2b0"/>
+          <rect x="4" y="2" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="2" width="1" height="1" fill="#ffe98a"/>
+          <rect x="6" y="2" width="1" height="1" fill="#f5b82e"/>
+          <rect x="7" y="2" width="1" height="1" fill="#f5b82e"/>
+          <rect x="8" y="2" width="1" height="1" fill="#f5b82e"/>
+          <rect x="9" y="2" width="1" height="1" fill="#f5b82e"/>
+          <rect x="10" y="2" width="1" height="1" fill="#2a1612"/>
+          <rect x="0" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="3" width="1" height="1" fill="#ffe98a"/>
+          <rect x="2" y="3" width="1" height="1" fill="#ffe98a"/>
+          <rect x="3" y="3" width="1" height="1" fill="#f5b82e"/>
+          <rect x="4" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="5" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="6" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="7" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="8" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="10" y="3" width="1" height="1" fill="#c07a18"/>
+          <rect x="11" y="3" width="1" height="1" fill="#2a1612"/>
+          <rect x="0" y="4" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="4" width="1" height="1" fill="#ffe98a"/>
+          <rect x="2" y="4" width="1" height="1" fill="#f5b82e"/>
+          <rect x="3" y="4" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="4" width="1" height="1" fill="#7a4a10"/>
+          <rect x="5" y="4" width="1" height="1" fill="#7a4a10"/>
+          <rect x="6" y="4" width="1" height="1" fill="#7a4a10"/>
+          <rect x="7" y="4" width="1" height="1" fill="#7a4a10"/>
+          <rect x="8" y="4" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="4" width="1" height="1" fill="#f5b82e"/>
+          <rect x="10" y="4" width="1" height="1" fill="#c07a18"/>
+          <rect x="11" y="4" width="1" height="1" fill="#2a1612"/>
+          <rect x="0" y="5" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="5" width="1" height="1" fill="#ffe98a"/>
+          <rect x="2" y="5" width="1" height="1" fill="#f5b82e"/>
+          <rect x="3" y="5" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="5" width="1" height="1" fill="#7a4a10"/>
+          <rect x="8" y="5" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="5" width="1" height="1" fill="#f5b82e"/>
+          <rect x="10" y="5" width="1" height="1" fill="#c07a18"/>
+          <rect x="11" y="5" width="1" height="1" fill="#2a1612"/>
+          <rect x="0" y="6" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="6" width="1" height="1" fill="#f5b82e"/>
+          <rect x="2" y="6" width="1" height="1" fill="#f5b82e"/>
+          <rect x="3" y="6" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="6" width="1" height="1" fill="#7a4a10"/>
+          <rect x="8" y="6" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="6" width="1" height="1" fill="#c07a18"/>
+          <rect x="10" y="6" width="1" height="1" fill="#7a4a10"/>
+          <rect x="11" y="6" width="1" height="1" fill="#2a1612"/>
+          <rect x="0" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="7" width="1" height="1" fill="#f5b82e"/>
+          <rect x="2" y="7" width="1" height="1" fill="#c07a18"/>
+          <rect x="3" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="5" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="6" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="7" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="8" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="7" width="1" height="1" fill="#c07a18"/>
+          <rect x="10" y="7" width="1" height="1" fill="#7a4a10"/>
+          <rect x="11" y="7" width="1" height="1" fill="#2a1612"/>
+          <rect x="1" y="8" width="1" height="1" fill="#2a1612"/>
+          <rect x="2" y="8" width="1" height="1" fill="#f5b82e"/>
+          <rect x="3" y="8" width="1" height="1" fill="#f5b82e"/>
+          <rect x="4" y="8" width="1" height="1" fill="#f5b82e"/>
+          <rect x="5" y="8" width="1" height="1" fill="#c07a18"/>
+          <rect x="6" y="8" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="8" width="1" height="1" fill="#c07a18"/>
+          <rect x="8" y="8" width="1" height="1" fill="#c07a18"/>
+          <rect x="9" y="8" width="1" height="1" fill="#7a4a10"/>
+          <rect x="10" y="8" width="1" height="1" fill="#2a1612"/>
+          <rect x="2" y="9" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="9" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="9" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="9" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="9" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="9" width="1" height="1" fill="#2a1612"/>
+          <rect x="8" y="9" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="9" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="10" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="10" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="10" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="10" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="10" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="11" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="11" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="11" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="11" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="11" width="1" height="1" fill="#2a1612"/>
+          <rect x="8" y="11" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="11" width="1" height="1" fill="#2a1612"/>
+          <rect x="10" y="11" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="12" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="12" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="12" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="12" width="1" height="1" fill="#f5b82e"/>
+          <rect x="7" y="12" width="1" height="1" fill="#f5b82e"/>
+          <rect x="8" y="12" width="1" height="1" fill="#f5b82e"/>
+          <rect x="9" y="12" width="1" height="1" fill="#c07a18"/>
+          <rect x="10" y="12" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="13" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="13" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="13" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="13" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="13" width="1" height="1" fill="#c07a18"/>
+          <rect x="8" y="13" width="1" height="1" fill="#7a4a10"/>
+          <rect x="9" y="13" width="1" height="1" fill="#7a4a10"/>
+          <rect x="10" y="13" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="14" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="14" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="14" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="14" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="14" width="1" height="1" fill="#2a1612"/>
+          <rect x="8" y="14" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="14" width="1" height="1" fill="#2a1612"/>
+          <rect x="10" y="14" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="15" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="15" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="15" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="15" width="1" height="1" fill="#f5b82e"/>
+          <rect x="7" y="15" width="1" height="1" fill="#f5b82e"/>
+          <rect x="8" y="15" width="1" height="1" fill="#c07a18"/>
+          <rect x="9" y="15" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="16" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="16" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="16" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="16" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="16" width="1" height="1" fill="#7a4a10"/>
+          <rect x="8" y="16" width="1" height="1" fill="#7a4a10"/>
+          <rect x="9" y="16" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="17" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="17" width="1" height="1" fill="#ffe98a"/>
+          <rect x="5" y="17" width="1" height="1" fill="#f5b82e"/>
+          <rect x="6" y="17" width="1" height="1" fill="#c07a18"/>
+          <rect x="7" y="17" width="1" height="1" fill="#2a1612"/>
+          <rect x="8" y="17" width="1" height="1" fill="#2a1612"/>
+          <rect x="9" y="17" width="1" height="1" fill="#2a1612"/>
+          <rect x="3" y="18" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="18" width="1" height="1" fill="#f5b82e"/>
+          <rect x="5" y="18" width="1" height="1" fill="#c07a18"/>
+          <rect x="6" y="18" width="1" height="1" fill="#7a4a10"/>
+          <rect x="7" y="18" width="1" height="1" fill="#2a1612"/>
+          <rect x="4" y="19" width="1" height="1" fill="#2a1612"/>
+          <rect x="5" y="19" width="1" height="1" fill="#2a1612"/>
+          <rect x="6" y="19" width="1" height="1" fill="#2a1612"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 2. Cat, then the dropped letter -->
+    <section class="scene scene-card" id="scene-cat" inert>
+      <div class="card">
+        <p class="pet-counter" id="pet-counter" aria-live="polite"><img src="assets/images/heart.svg" alt="Pets:"><span>x</span><span id="pet-count">0</span></p>
+        <span class="ground-shadow cat-shadow" aria-hidden="true"></span>
+        <div class="cat-wrap idle">
+          <button class="cat" id="cat" aria-label="Pet the cat">
+            <img id="cat-img" src="assets/images/cat.svg" alt="An orange tabby cat">
+          </button>
+          <img class="hand" id="hand" src="assets/images/hand.svg" alt="">
+          <div class="hearts" id="hearts" aria-hidden="true"></div>
+        </div>
+        <div class="letter-wrap" id="letter-wrap" hidden>
+          <button class="letter" id="letter" aria-label="Open the letter">
+            <img id="letter-img" src="assets/images/envelope-closed.svg" alt="">
+          </button>
+          <span class="shadow"></span>
+        </div>
+        <p class="caption" id="cat-caption" aria-live="polite">This cat is holding something (Try petting it!)</p>
+      </div>
+    </section>
+
+    <!-- 3. The note -->
+    <section class="scene scene-card" id="scene-note" inert>
+      <div class="note-wrap">
+        <article class="note">
+          <div class="note-scroll" id="note-scroll" tabindex="0" role="region" aria-label="The letter (scroll to read)">
+            <!-- filled from letter.txt by script.js; this paragraph is the fallback
+                 when the file can't be read (e.g. the page opened straight from disk) -->
+            <p>Hello, the letter didnt load, haha.</p>
+          </div>
+          <p class="note-cue" aria-hidden="true">scroll</p>
+        </article>
+        <!-- two cats peeking up from the bottom corners (decorative) -->
+        <div class="peek-cat peek-tuxedo" aria-hidden="true">
+          <img class="peek-open" src="assets/images/cat-tuxedo-peek.svg" alt="">
+          <img class="peek-shut" src="assets/images/cat-tuxedo-peek-blink.svg" alt="">
+        </div>
+        <div class="peek-cat peek-white" aria-hidden="true">
+          <img class="peek-open" src="assets/images/cat-white-peek.svg" alt="">
+          <img class="peek-shut" src="assets/images/cat-white-peek-blink.svg" alt="">
+          <!-- pupils, moved by script.js to follow the main butterfly -->
+          <span class="pupil pupil-l"></span>
+          <span class="pupil pupil-r"></span>
+          <!-- the swatting front leg, in front of the chest: four poses, one shown at a time -->
+          <span class="peek-paw">
+            <img class="paw-rest" src="assets/images/cat-white-paw-rest.svg" alt="">
+            <img class="paw-wind" src="assets/images/cat-white-paw-wind.svg" alt="">
+            <img class="paw-up" src="assets/images/cat-white-paw-up.svg" alt="">
+            <img class="paw-bat" src="assets/images/cat-white-paw-bat.svg" alt="">
+          </span>
+        </div>
+      </div>
+      <p class="note-hint">click outside the letter to go back</p>
+      <!-- butterflies the white cat swats at (decorative) -->
+      <div class="butterfly bf-1" aria-hidden="true"><span class="bf-body"><img src="assets/images/butterfly.svg" alt=""><img class="bf-flap" src="assets/images/butterfly-flap.svg" alt=""></span></div>
+      <div class="butterfly bf-2" aria-hidden="true"><span class="bf-body"><img src="assets/images/butterfly-blue.svg" alt=""><img class="bf-flap" src="assets/images/butterfly-blue-flap.svg" alt=""></span></div>
+      <div class="butterfly bf-3" aria-hidden="true"><span class="bf-body"><img src="assets/images/butterfly.svg" alt=""><img class="bf-flap" src="assets/images/butterfly-flap.svg" alt=""></span></div>
+    </section>
+
+  </main>
+
+  <!-- Passcode keypad -->
+  <div class="modal" id="modal" hidden>
+    <div class="keypad-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <p class="modal-title" id="modal-title">Enter the passcode</p>
+      <div class="code" id="code" aria-live="polite">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="keypad" id="keypad">
+        <button data-key="1">1</button>
+        <button data-key="2">2</button>
+        <button data-key="3">3</button>
+        <button data-key="4">4</button>
+        <button data-key="5">5</button>
+        <button data-key="6">6</button>
+        <button data-key="7">7</button>
+        <button data-key="8">8</button>
+        <button data-key="9">9</button>
+        <button data-key="clear" aria-label="Clear">C</button>
+        <button data-key="0">0</button>
+        <button data-key="back" aria-label="Delete last digit">&lt;</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
